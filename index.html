@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accessible Form UI</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form action="#" method="POST" aria-labelledby="formTitle">
+            <h1 id="formTitle">Create Account</h1>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <div class="form-group">
+                        <label for="full-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="full-name" required aria-required="true" placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <div class="password-container">
+                            <input type="password" id="password" name="password" required aria-required="true" placeholder="Enter your password">
+                            <span class="eye-icon" id="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password <span class="required">*</span></label>
+                        <div class="password-container">
+                            <input type="password" id="confirm-password" name="confirm-password" required aria-required="true" placeholder="Confirm your password">
+                            <span class="eye-icon" id="toggle-confirm-password" onclick="toggleConfirmPasswordVisibility()">👁️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="right-section">
+                    <div class="circle-border">
+                        <div class="circle">
+                            <div class="progress-text">65%</div>
+                        </div>
+                    </div>
+
+                    <ul id="requirements-checklist">
+                        <li>Full Name is filled</li>
+                        <li>Email is valid</li>
+                        <li>Passwords match</li>
+                    </ul>
+
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
